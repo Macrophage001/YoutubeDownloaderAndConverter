@@ -43,9 +43,13 @@ def convert_subcommand(program, args):
 
     # Run ffmpeg subprocess to convert audio stream mp4 -> mp3
     print(f'Converting: {default_filename} to {new_filename}...')
-    syscall = f'.\\ffmpeg\\bin\\ffmpeg.exe -i to_convert.mp4 {new_filename}.mp3'
+    # syscall = f'.\\ffmpeg\\bin\\ffmpeg.exe -i to_convert.mp4 {new_filename}'
 
-    os.system(syscall)
+    proc = subprocess.run(['.\\ffmpeg\\bin\\ffmpeg.exe', '-i', 'to_convert.mp4', new_filename])
+    print(f'{proc}')
+    if proc.returncode == 0:
+        os.remove('to_convert.mp4')
+    # os.system(syscall)
 
 
 SUBCOMMANDS = {
