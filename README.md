@@ -5,7 +5,7 @@ Simple youtube video downloader and converter in python using the Pytube library
 ## Commands
 
 ```console
-$ python ydc.py download <url>
+$ python ydc.py download single|multiple|playlist <url>
 $ python ydc.py convert <url>
 ```
 
@@ -23,4 +23,3 @@ $ pip install pytube
 How to install:
 Download windows version here: https://ffmpeg.org/download.html
 Extract and place folder in project.
-
